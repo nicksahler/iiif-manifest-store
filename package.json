@@ -9,22 +9,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/textandbytes/iiif-manifest-store.git"
+    "url": "git+https://github.com/nicksahler/iiif-manifest-store.git"
   },
   "keywords": [
     "iiif",
     "manifest",
     "store"
   ],
-  "author": "text & bytes LLC",
+  "author": "nicksahler, forked from text & bytes LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/textandbytes/iiif-manifest-store/issues"
+    "url": "https://github.com/nicksahler/iiif-manifest-store/issues"
   },
-  "homepage": "https://github.com/textandbytes/iiif-manifest-store#readme",
+  "homepage": "https://github.com/nicksahler/iiif-manifest-store#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "uuid": "^3.2.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "prettier": "1.18.2"
   }
 }

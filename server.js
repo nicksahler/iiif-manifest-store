@@ -49,13 +49,13 @@ app.route('/api/manifests')
     var manifestUris = [];
     manifestFiles.map((manifestFilename, index) => {
       manifestUris.push({
-        uri: req.protocol + '://' + req.headers.host + '/api/manifests/' + manifestFilename
+        uri: 'https://' + req.headers.host + '/m/api/manifests/' + manifestFilename
       })
     });
 
     // generate JSON list with manifest uris
     res.json({ manifests: manifestUris });
-  }) 
+  })
 
   // create a manifest
   .post(function(req, res) {
@@ -69,7 +69,7 @@ app.route('/api/manifests')
     res.status(201);
 
     // return the manifest uri
-    res.json({ uri: req.protocol + '://' + req.headers.host + '/api/manifests/' + manifestId });
+    res.json({ uri: 'https://' + req.headers.host + '/m/api/manifests/' + manifestId });
   });
 
 app.route('/api/manifests/:manifestId')

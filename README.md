@@ -131,5 +131,9 @@ Example URL: http://localhost:3001/api/manifests/example-manifest
 }
 ```
 
+## Starting with PM2
 
+To pass in lists of namespaces to the app if you're using PM2, run this:
+`pm2 start server.js -- -n stage -n prod -n api`
 
+but with whatever namespaces you intend on using.

@@ -30,11 +30,11 @@ const app = express()
 /*
 Route                         HTTP Verb Description
 -------------------------------------------------------------------------------------------
-/:namespace/manifests               GET       Get all manifests
-/:namespace/manifests               POST      Create a manifest - return manifest uri
-/:namespace/manifests/:mid   GET       Get manifest by id
-/:namespace/manifests/:mid   PUT       Update manifest with id
-/:namespace/manifests/:mid   DELETE    Delete manifest with id (currently not implemented)
+/:namespace/manifests         GET       Get all manifests
+/:namespace/manifests         POST      Create a manifest - return manifest uri
+/:namespace/manifests/:mid    GET       Get manifest by id
+/:namespace/manifests/:mid    PUT       Update manifest with id
+/:namespace/manifests/:mid    DELETE    Delete manifest with id (currently not implemented)
 -------------------------------------------------------------------------------------------
 */
 const cleanPath = filePath => {

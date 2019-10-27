@@ -1,4 +1,7 @@
 # iiif-manifest-store
+
+**This repo has been forked by nicksahler to maintain the codebase, patch a few security vulnerabilities, and add namespacing features. Check the forked repo for the original.**
+
 A simple Node application to store and retrieve IIIF manifests via REST API. It can be used in conjunction with the [IIIF Manifest Editor](https://github.com/bodleian/iiif-manifest-editor) to store manifests remotely. Please note that this application currently does not support authentication so anybody can POST and GET manifests to the store. Use it behind a firewall and/or for testing purposes only.
 
 
@@ -11,9 +14,9 @@ A simple Node application to store and retrieve IIIF manifests via REST API. It 
 
 ### Installation ###
 
-* Clone this repository: `git clone git@github.com:textandbytes/iiif-manifest-store.git`
+* Clone this repository: `git clone git@github.com:nicksahler/iiif-manifest-store.git`
 * Change into the project directory: `cd iiif-manifest-store`
-* Install Node v8.1.4 with nvm: `nvm install v8.9.4`
+* Install Node v10 with nvm: `nvm install v10.16.3`
 * Install the required node modules into the project: `npm install`
 
 ## How to run the application ##
@@ -23,19 +26,19 @@ A simple Node application to store and retrieve IIIF manifests via REST API. It 
 
 ## API ##
 
-| Route                      | HTTP Verb     | Description                                         |
-| -------------------------- | ------------- | --------------------------------------------------- |
-| /api/manifests             | GET           | Get all manifests                                   |
-| /api/manifests             | POST          | Create a manifest - returns manifest uri            |
-| /api/manifests/:manifestId | GET           | Get manifest by id                                  |
-| /api/manifests/:manifestId | PUT           | Update manifest with id                             |
-| /api/manifests/:manifestId | DELETE        | Delete manifest with id (currently not implemented) |
+| Route                             | HTTP Verb     | Description                                         |
+| --------------------------------- | ------------- | --------------------------------------------------- |
+| /:namespace/manifests             | GET           | Get all manifests in a given namespace              |
+| /:namespace/manifests             | POST          | Create a manifest - returns manifest uri            |
+| /:namespace/manifests/:manifestId | GET           | Get manifest by id                                  |
+| /:namespace/manifests/:manifestId | PUT           | Update manifest with id                             |
+| /:namespace/manifests/:manifestId | DELETE        | Delete manifest with id (currently not implemented) |
 
 ### Get a List of All Manifests ###
 
-**Request:** GET /api/manifests
+**Request:** GET /:namespace/manifests
 
-Example URL: http://localhost:3001/api/manifests
+Example URL: http://localhost:3001/:namespace/manifests
 
 **HTTP Status Code:** 200 OK
 
@@ -44,9 +47,9 @@ Example URL: http://localhost:3001/api/manifests
 ```javascript
 {"manifests":
   [
-    {"uri":"http://localhost:3001/api/manifests/6b3bf0a8-b8f6-452a-bcbf-f336ff335c93"},
-    {"uri":"http://localhost:3001/api/manifests/db45e27f-edbf-446b-8794-eb9070c3647e"},
-    {"uri":"http://localhost:3001/api/manifests/example-manifest"}
+    {"uri":"http://localhost:3001/:namespace/manifests/6b3bf0a8-b8f6-452a-bcbf-f336ff335c93"},
+    {"uri":"http://localhost:3001/:namespace/manifests/db45e27f-edbf-446b-8794-eb9070c3647e"},
+    {"uri":"http://localhost:3001/:namespace/manifests/example-manifest"}
   ]
 }
 ```

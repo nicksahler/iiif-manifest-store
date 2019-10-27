@@ -121,7 +121,6 @@ app
     fs.writeFileSync(req.fullManifestPath, JSON.stringify(req.body))
     res.status(status).json({ message: 'Manifest successfully updated' })
   })
-
   // delete an existing manifest with id
   .delete((req, res) => {
     // TODO: Rudimentary authentication

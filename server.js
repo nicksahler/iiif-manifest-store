@@ -97,7 +97,7 @@ app
   // create a manifest
   .post((req, res) => {
     const id = uuid()
-    const uri = formatManifestURI(req.headers.host, req.params.namespace)
+    const uri = formatManifestURI(req.headers.host, req.params.namespace, id)
 
     fs.writeFileSync(
       formatPath(req.params.namespace, id),

@@ -100,7 +100,7 @@ app
     const uri = formatManifestURI(req.headers.host, req.params.namespace)
 
     fs.writeFileSync(
-      formatPath(request.params.namespace, id),
+      formatPath(req.params.namespace, id),
       JSON.stringify(req.body)
     )
     res.status(201).json({ uri })

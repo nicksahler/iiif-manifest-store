@@ -119,7 +119,7 @@ app
   // update an existing manifest with id
   .put((req, res) => {
     fs.writeFileSync(req.fullManifestPath, JSON.stringify(req.body))
-    res.status(status).json({ message: 'Manifest successfully updated' })
+    res.status(200).json({ message: 'Manifest successfully updated' })
   })
   // delete an existing manifest with id
   .delete((req, res) => {
